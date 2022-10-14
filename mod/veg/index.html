@@ -26,8 +26,8 @@
     <section class="items">
       <div class="item">
         <img src="gallery/img-1.jpg" />
-        <h4>Mix-veg (&#8377 56) <span> &nbsp; 20-30% off</span></h4>
-        <a href="../payment/payment gateway/index.html">Order</a>
+        <h4 ><span id="price">Mix-veg</span> (&#8377 56)  20-30% off </h4>
+        <a onclick="checkout()">Order</a>
       </div>
       <div class="item">
         <img src="gallery/img-2.jpg" />
@@ -57,3 +57,14 @@
     </section>
   </body>
 </html>
+<script>
+    function checkout(){
+      var b = document.getElementById('price').innerHTML;
+
+        url =  'http://127.0.0.1:5500/mod/veg/checkout.html?name='+ encodeURIComponent(b);
+        document.location.href = url ;
+        console.log(url);
+
+    }
+    
+</script>
